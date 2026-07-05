@@ -9,10 +9,10 @@
         {
             "id": "com.sobolevcode.proxytune",
             "title": "ProxyTune",
-            "iconUri": "https://raw.githubusercontent.com/sobolevcode/configs/main/icon.png",
+            "iconUri": "https://raw.githubusercontent.com/sobolevcode/repo/refs/heads/main/image/icon.png",
             "manifest": {
                 "id": "com.sobolevcode.proxytune",
-                "version": "3.0.0",
+                "version": "1.0.0",
                 "type": "web",
                 "title": "ProxyTune",
                 "appDescription": "Инструмент для комфортного просмотра потокового видео на webOS. Поддержка современных протоколов: VLESS, Trojan, Shadowsocks, SOCKS5. Оптимизировано для старых ТВ.",
