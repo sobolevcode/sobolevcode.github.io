@@ -12,18 +12,18 @@
             "iconUri": "https://raw.githubusercontent.com/sobolevcode/configs/main/icon.png",
             "manifest": {
                 "id": "com.proxytune",
-                "version": "1.0.0",
+                "version": "1.0.2",
                 "type": "web",
                 "title": "ProxyTune",
                 "appDescription": "Инструмент для комфортного просмотра потокового видео на webOS. Поддержка современных протоколов: VLESS, Trojan, Shadowsocks, SOCKS5. Оптимизировано для старых ТВ.",
                 "iconUri": "https://raw.githubusercontent.com/sobolevcode/configs/main/icon.png",
                 "sourceUrl": "https://t.me/sobolevcode",
                 "rootRequired": true,
-                "ipkUrl": "https://github.com/sobolevcode/repo/releases/download/v1.0.0/com.proxytune_1.0.0_all.ipk",
+                "ipkUrl": "https://github.com/sobolevcode/repo/releases/download/v1.0.2/com.proxytune_1.0.2_all.ipk",
                 "ipkHash": {
-                    "sha256": "sha256:4ac72b215f895d948a43be147825cbcb7377cddd65844b52376ecb4744227213"
+                    "sha256": "4ac72b215f895d948a43be147825cbcb7377cddd65844b52376ecb4744227213"
                 },
-                "ipkSize": 0
+                "ipkSize": 18623020
             },
             "pool": "main",
             "shortDescription": "Менеджер прокси-протоколов для webOS",
