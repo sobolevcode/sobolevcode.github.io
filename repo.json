@@ -9,7 +9,7 @@
         {
             "id": "com.proxytune",
             "title": "ProxyTune",
-            "iconUri": "https://raw.githubusercontent.com/sobolevcode/sobolevcode.github.io/refs/heads/main/icon.png",
+            "iconUri": "https://raw.githubusercontent.com/sobolevcode/sobolevcode.github.io/refs/heads/main/image/icon.png",
             "manifest": {
                 "id": "com.proxytune",
                 "version": "1.0.2",
