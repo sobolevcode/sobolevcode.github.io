@@ -21,9 +21,9 @@
                 "rootRequired": true,
                 "ipkUrl": "https://github.com/sobolevcode/sobolevcode.github.io/releases/download/v1.0.3/com.proxytune_1.0.3_all.ipk",
                 "ipkHash": {
-                    "sha256": "4ac72b215f895d948a43be147825cbcb7377cddd65844b52376ecb4744227213"
+                    "sha256": "cacee49a6bf54d1d57e4a273ef865dcf1d4db26e6583d02e5a3fac30fc871449"
                 },
-                "ipkSize": 18623020
+                "ipkSize": 18621362
             },
             "pool": "main",
             "shortDescription": "Менеджер прокси-протоколов для webOS",
