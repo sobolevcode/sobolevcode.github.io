@@ -12,18 +12,18 @@
             "iconUri": "https://raw.githubusercontent.com/sobolevcode/sobolevcode.github.io/refs/heads/main/image/icon.png",
             "manifest": {
                 "id": "com.proxytune",
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "type": "web",
                 "title": "ProxyTune",
                 "appDescription": "Универсальный VPN-клиент для webOS. Прямая поддержка подписок (Marzban, X-UI) и современных протоколов: VLESS, Trojan, Shadowsocks, SOCKS5. Удобное управление со смартфона, поддержка webOS 4+",
                 "iconUri": "https://raw.githubusercontent.com/sobolevcode/sobolevcode.github.io/refs/heads/main/image/icon.png",
                 "sourceUrl": "https://t.me/sobolevcode",
                 "rootRequired": true,
-                "ipkUrl": "https://github.com/sobolevcode/sobolevcode.github.io/releases/download/v1.1.1/com.proxytune_1.1.1_all.ipk",
+                "ipkUrl": "https://github.com/sobolevcode/sobolevcode.github.io/releases/download/v1.2.0/com.proxytune_1.2.0_all.ipk",
                 "ipkHash": {
-                    "sha256": "4aa85c4d303d4fe4dd2f9cd6b17012013928f1019a538238d71e25f7876e921f"
+                    "sha256": "1728161c9e55439506d49c5d6f22c5afa2743df139525da954e4e7d5317f7823"
                 },
-                "ipkSize": 18629860
+                "ipkSize": 18634432
             },
             "pool": "main",
             "shortDescription": "Менеджер прокси-протоколов для webOS",
