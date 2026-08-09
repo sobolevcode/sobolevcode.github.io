@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProxyTune v2.0.0 — Клиент для LG webOS</title>
+    <title>ProxyTune v2.0.2 — Клиент для LG webOS</title>
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sobolevcode.github.io/">
-    <meta property="og:title" content="ProxyTune v2.0.0 — Теперь на Xray Core!">
-    <meta property="og:description" content="Глобальное обновление: переход на движок Xray. Модульная архитектура, поддержка VLESS Reality и подписок с привязкой по HWID.">
+    <meta property="og:title" content="ProxyTune v2.0.2 — Максимальная стабильность Xray!">
+    <meta property="og:description" content="Глобальное обновление: защита от вылетов, умный обход локальной сети и авто-настройка DNS. Поддержка VLESS Reality и подписок по HWID.">
     <meta property="og:image" content="https://raw.githubusercontent.com/sobolevcode/sobolevcode.github.io/refs/heads/main/image/xray2.0.png">
     
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ProxyTune v2.0.0 — Теперь на Xray Core!">
-    <meta name="twitter:description" content="Глобальное обновление: переход на движок Xray. Модульная архитектура, поддержка VLESS Reality и подписок с привязкой по HWID.">
+    <meta name="twitter:title" content="ProxyTune v2.0.2 — Максимальная стабильность Xray!">
+    <meta name="twitter:description" content="Глобальное обновление: защита от вылетов, умный обход локальной сети и авто-настройка DNS. Поддержка VLESS Reality и подписок по HWID.">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/sobolevcode/sobolevcode.github.io/refs/heads/main/image/xray2.0.png">
 
     <style>
@@ -174,23 +174,25 @@
 
     <div class="header">SobolevCode</div>
 
-    <h1>ProxyTune v2.0.0</h1>
+    <h1>ProxyTune v2.0.2</h1>
 
     <img src="https://raw.githubusercontent.com/sobolevcode/sobolevcode.github.io/refs/heads/main/image/xray2.0.png" alt="Интерфейс ProxyTune" class="preview-img">
 
     <div class="description">
-        <p>Всем привет! Друзья, я выкатываю, пожалуй, самое масштабное и важное обновление с момента релиза ProxyTune. Мы полностью пересобрали приложение под капотом, чтобы сделать его еще стабильнее и всеяднее. Встречайте версию 2.0.0!</p>
+        <p>Всем привет! Друзья, я выкатываю важнейшее обновление стабильности. Мы глубоко оптимизировали работу приложения под капотом, чтобы сделать его идеальным решением для любых телевизоров и домашних сетей. Встречайте версию 2.0.2!</p>
         
-        <h3>Главное в версии 2.0.0:</h3>
+        <h3>Главное в версии 2.0.2:</h3>
         <p>
-            • <b>Переход на ядро Xray Core.</b>Движок <i>sing-box</i> был отличным решением, но мы пошли еще дальше и перешли на продвинутую модульную связку Xray + tun2socks. Что это дало? Идеальную работу с транспортом gRPC, безотказную поддержку протокола XTLS Reality.<br><br>
-            • <b>Поддержка приватных подписок (HWID).</b> Теперь приложение без проблем переваривает подписки от закрытых провайдеров (типа HAPP), которые используют жесткую привязку к вашему железу.<br><br>
-            • <b>Легче, чем когда-либо.</b> Несмотря на новые возможности движка, за счет модульной архитектуры сам установочный пакет <code>.ipk</code> стал весить даже меньше (всего 30 МБ вместо 36 МБ).<br><br>
-            • <b>Больше никаких проблем с JSON.</b> Теперь вы можете смело вставлять «сырые» JSON-конфигурации Xray — приложение с ними отлично дружит.
+            • <b>Защита памяти и вылетов (OOM Fix) [NEW].</b> Внедрен строгий контроль оперативной памяти. Ядро работает в жестких лимитах, высвобождая ресурсы ТВ под тяжелый контент вроде YouTube 4K. Вылеты на новых 64-битных телевизорах (LG C5 и др.) устранены.<br><br>
+            • <b>Умный обход локальной сети [NEW].</b> Добавлены системные правила, исключающие домашний трафик из VPN. Управление ТВ с пульта LG ThinQ, веб-интерфейс на смартфоне и доступ по SSH больше не отваливаются в сложных Mesh-сетях.<br><br>
+            • <b>Авто-настройка DNS и маршрутов [NEW].</b> Приложение автоматически перехватывает сетевые запросы и фильтрует нестабильный трафик. Забудьте про бесконечную буферизацию в YouTube и ручную смену DNS (особенно актуально для USB LAN адаптеров).<br><br>
+            • <b>Ядро Xray Core.</b> Продвинутая модульная связка Xray + tun2socks. Идеальная работа с транспортом gRPC и безотказная поддержка протокола XTLS Reality.<br><br>
+            • <b>Поддержка приватных подписок (HWID).</b> Приложение без проблем переваривает подписки от закрытых провайдеров (типа HAPP), использующих привязку к железу.<br><br>
+            • <b>Бесшовная поддержка JSON.</b> Вы можете смело вставлять «сырые» JSON-конфигурации Xray — приложение с ними отлично дружит.
         </p>
 
         <div class="success-box">
-            ✅ <b>Бесшовное обновление:</b> Накатывайте новую версию прямо поверх старой! Ваша история, избранные серверы и закладка в браузере телефона на порту <i>:8888</i> останутся на месте.
+            ✅ <b>Бесшовное обновление:</b> Накатывайте новую версию прямо поверх старой! Ваша история, избранные серверы и закладка в браузере телефона на порту <i>:8888</i> останутся на месте. (После обновления рекомендуем выключить ТВ из розетки на пару минут для сброса кэша).
         </div>
 
         <h3>Остались на месте и наши лучшие фишки:</h3>
@@ -214,7 +216,7 @@
     </div>
 
     <div class="links">
-        <a href="https://github.com/sobolevcode/sobolevcode.github.io/releases/download/v2.0.0/com.proxytune_2.0.0_all.ipk" class="download-btn">Скачать ProxyTune v2.0.0 (Xray)</a>
+        <a href="https://github.com/sobolevcode/sobolevcode.github.io/releases/download/v2.0.2/com.proxytune_2.0.2_all.ipk" class="download-btn">Скачать ProxyTune v2.0.2 (Xray)</a>
         
         <a href="https://github.com/sobolevcode/sobolevcode.github.io/releases/download/v1.4.0/com.proxytune_1.4.0_all.ipk" class="download-btn-old">Скачать v1.4.0 (Sing-box)</a>
     </div>
