@@ -1,233 +1,445 @@
-<!DOCTYPE html>
+DOCTYPE html>
+
 <html lang="ru">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProxyTune v2.0.2 — Клиент для LG webOS</title>
+
+    <title>ProxyTune v2.0.0 — Клиент для LG webOS</title>
+
 
     <meta property="og:type" content="website">
+
     <meta property="og:url" content="https://sobolevcode.github.io/">
-    <meta property="og:title" content="ProxyTune v2.0.2 — Максимальная стабильность Xray!">
-    <meta property="og:description" content="Глобальное обновление: защита от вылетов, умный обход локальной сети и авто-настройка DNS. Поддержка VLESS Reality и подписок по HWID.">
+
+    <meta property="og:title" content="ProxyTune v2.0.0 — Теперь на Xray Core!">
+
+    <meta property="og:description" content="Глобальное обновление: переход на движок Xray. Модульная архитектура, поддержка VLESS Reality и подписок с привязкой по HWID.">
+
     <meta property="og:image" content="https://raw.githubusercontent.com/sobolevcode/sobolevcode.github.io/refs/heads/main/image/xray2.0.png">
+
     
+
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ProxyTune v2.0.2 — Максимальная стабильность Xray!">
-    <meta name="twitter:description" content="Глобальное обновление: защита от вылетов, умный обход локальной сети и авто-настройка DNS. Поддержка VLESS Reality и подписок по HWID.">
+
+    <meta name="twitter:title" content="ProxyTune v2.0.0 — Теперь на Xray Core!">
+
+    <meta name="twitter:description" content="Глобальное обновление: переход на движок Xray. Модульная архитектура, поддержка VLESS Reality и подписок с привязкой по HWID.">
+
     <meta name="twitter:image" content="https://raw.githubusercontent.com/sobolevcode/sobolevcode.github.io/refs/heads/main/image/xray2.0.png">
 
+
     <style>
+
         body {
+
             font-family: Arial, sans-serif;
+
             background-color: #ffffff;
+
             color: #333333;
+
             line-height: 1.6;
+
             max-width: 800px;
+
             margin: 0 auto;
+
             padding: 40px 20px;
+
         }
+
         .header {
+
             font-size: 1.2rem;
+
             font-weight: bold;
+
             color: #666666;
+
             margin-bottom: 30px;
+
             border-bottom: 1px solid #eeeeee;
+
             padding-bottom: 10px;
+
         }
+
         h1 {
+
             font-size: 2.5rem;
+
             margin-bottom: 15px;
+
             color: #000000;
+
         }
+
         h3 {
+
             margin-top: 30px;
+
         }
+
         .preview-img {
+
             height: auto;
+
             margin-bottom: 25px;
+
             border-radius: 8px;
+
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
             max-width: 100%;
+
         }
+
         .description {
+
             margin-bottom: 30px;
+
             font-size: 1.1rem;
+
         }
+
         .success-box {
+
             background-color: #d1e7dd;
+
             color: #0f5132;
+
             padding: 15px;
+
             border-left: 4px solid #198754;
+
             border-radius: 0 8px 8px 0;
+
             margin: 20px 0;
+
             font-size: 1rem;
+
         }
+
         .faq-box {
+
             background-color: #f9f9f9;
+
             padding: 20px;
+
             border-left: 4px solid #555555;
+
             margin: 30px 0;
+
             border-radius: 0 8px 8px 0;
+
             font-size: 1rem;
+
         }
+
         .faq-box h4 {
+
             margin-top: 0;
+
             color: #222222;
+
             font-size: 1.1rem;
+
             margin-bottom: 10px;
+
         }
+
         .faq-box ul {
+
             padding-left: 20px;
+
             margin-bottom: 15px;
+
         }
+
         .faq-box li {
+
             margin-bottom: 8px;
+
         }
+
         .repo-link {
+
             background-color: #f9f9f9;
+
             padding: 15px;
+
             border-left: 4px solid #555555;
+
             font-family: monospace;
+
             font-size: 1.1rem;
+
             margin-bottom: 30px;
+
             word-break: break-all;
+
         }
+
         .links {
+
             margin-bottom: 50px;
+
             display: flex;
+
             gap: 15px;
+
             flex-wrap: wrap;
+
         }
+
         a {
+
             color: #0066cc;
+
             text-decoration: none;
+
         }
+
         a:hover {
+
             color: #004499;
+
             text-decoration: underline;
+
         }
+
         
+
         .download-btn {
+
             display: inline-block;
+
             background-color: #333333;
+
             color: #ffffff !important;
+
             font-weight: bold;
+
             font-size: 1.1rem;
+
             padding: 12px 32px;
+
             border-radius: 50px;
+
             text-align: center;
+
             transition: background-color 0.2s ease;
+
             flex: 1;
+
             min-width: 250px;
+
         }
+
         .download-btn:hover {
+
             background-color: #111111;
+
             text-decoration: none;
+
         }
+
         
+
         .download-btn-old {
+
             display: inline-block;
+
             background-color: transparent;
+
             color: #555555 !important;
+
             font-weight: bold;
+
             font-size: 1.1rem;
+
             padding: 10px 32px;
+
             border-radius: 50px;
+
             border: 2px solid #cccccc;
+
             text-align: center;
+
             transition: all 0.2s ease;
+
             flex: 1;
+
             min-width: 250px;
+
         }
+
         .download-btn-old:hover {
+
             border-color: #555555;
+
             background-color: #f9f9f9;
+
             text-decoration: none;
+
         }
+
 
         .footer {
+
             border-top: 1px solid #eeeeee;
+
             padding-top: 20px;
+
             margin-top: 40px;
-        }
-        .footer a {
-            margin-right: 20px;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 10px;
-            color: #555555;
-        }
-        .footer a:hover {
-            color: #222222;
+
         }
 
-        @media (max-width: 600px) {
-            body { padding: 20px 15px; }
-            h1 { font-size: 2rem; }
-            .links { flex-direction: column; }
-            .download-btn, .download-btn-old { display: block; width: 100%; box-sizing: border-box; }
-            .faq-box, .success-box { padding: 15px; }
+        .footer a {
+
+            margin-right: 20px;
+
+            font-weight: bold;
+
+            display: inline-block;
+
+            margin-bottom: 10px;
+
+            color: #555555;
+
         }
+
+        .footer a:hover {
+
+            color: #222222;
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            body { padding: 20px 15px; }
+
+            h1 { font-size: 2rem; }
+
+            .links { flex-direction: column; }
+
+            .download-btn, .download-btn-old { display: block; width: 100%; box-sizing: border-box; }
+
+            .faq-box, .success-box { padding: 15px; }
+
+        }
+
     </style>
+
 </head>
+
 <body>
+
 
     <div class="header">SobolevCode</div>
 
-    <h1>ProxyTune v2.0.2</h1>
 
-    <img src="https://raw.githubusercontent.com/sobolevcode/sobolevcode.github.io/refs/heads/main/image/dash.png" alt="Интерфейс ProxyTune" class="preview-img">
+    <h1>ProxyTune v2.0.0</h1>
+
+
+    <img src="https://raw.githubusercontent.com/sobolevcode/sobolevcode.github.io/refs/heads/main/image/xray2.0.png" alt="Интерфейс ProxyTune" class="preview-img">
+
 
     <div class="description">
-        <p>Всем привет! Друзья, я выкатываю важнейшее обновление стабильности. Мы глубоко оптимизировали работу приложения под капотом, чтобы сделать его идеальным решением для любых телевизоров и домашних сетей. Встречайте версию 2.0.2!</p>
+
+        <p>Всем привет! Друзья, я выкатываю, пожалуй, самое масштабное и важное обновление с момента релиза ProxyTune. Мы полностью пересобрали приложение под капотом, чтобы сделать его еще стабильнее и всеяднее. Встречайте версию 2.0.0!</p>
+
         
-        <h3>Главное в версии 2.0.2:</h3>
+
+        <h3>Главное в версии 2.0.0:</h3>
+
         <p>
-            • <b>Защита памяти и вылетов (OOM Fix) [NEW].</b> Внедрен строгий контроль оперативной памяти. Ядро работает в жестких лимитах, высвобождая ресурсы ТВ под тяжелый контент вроде YouTube 4K. Вылеты на новых 64-битных телевизорах (LG C5 и др.) устранены.<br><br>
-            • <b>Умный обход локальной сети [NEW].</b> Добавлены системные правила, исключающие домашний трафик из VPN. Управление ТВ с пульта LG ThinQ, веб-интерфейс на смартфоне и доступ по SSH больше не отваливаются в сложных Mesh-сетях.<br><br>
-            • <b>Авто-настройка DNS и маршрутов [NEW].</b> Приложение автоматически перехватывает сетевые запросы и фильтрует нестабильный трафик. Забудьте про бесконечную буферизацию в YouTube и ручную смену DNS (особенно актуально для USB LAN адаптеров).<br><br>
-            • <b>Ядро Xray Core.</b> Продвинутая модульная связка Xray + tun2socks. Идеальная работа с транспортом gRPC и безотказная поддержка протокола XTLS Reality.<br><br>
-            • <b>Поддержка приватных подписок (HWID).</b> Приложение без проблем переваривает подписки от закрытых провайдеров (типа HAPP), использующих привязку к железу.<br><br>
-            • <b>Бесшовная поддержка JSON.</b> Вы можете смело вставлять «сырые» JSON-конфигурации Xray — приложение с ними отлично дружит.
+
+            • <b>Переход на ядро Xray Core.</b>Движок <i>sing-box</i> был отличным решением, но мы пошли еще дальше и перешли на продвинутую модульную связку Xray + tun2socks. Что это дало? Идеальную работу с транспортом gRPC, безотказную поддержку протокола XTLS Reality.<br><br>
+
+            • <b>Поддержка приватных подписок (HWID).</b> Теперь приложение без проблем переваривает подписки от закрытых провайдеров (типа HAPP), которые используют жесткую привязку к вашему железу.<br><br>
+
+            • <b>Легче, чем когда-либо.</b> Несмотря на новые возможности движка, за счет модульной архитектуры сам установочный пакет <code>.ipk</code> стал весить даже меньше (всего 30 МБ вместо 36 МБ).<br><br>
+
+            • <b>Больше никаких проблем с JSON.</b> Теперь вы можете смело вставлять «сырые» JSON-конфигурации Xray — приложение с ними отлично дружит.
+
         </p>
+
 
         <div class="success-box">
-            ✅ <b>Бесшовное обновление:</b> Накатывайте новую версию прямо поверх старой! Ваша история, избранные серверы и закладка в браузере телефона на порту <i>:8888</i> останутся на месте. (После обновления рекомендуем выключить ТВ из розетки на пару минут для сброса кэша).
+
+            ✅ <b>Бесшовное обновление:</b> Накатывайте новую версию прямо поверх старой! Ваша история, избранные серверы и закладка в браузере телефона на порту <i>:8888</i> останутся на месте.
+
         </div>
+
 
         <h3>Остались на месте и наши лучшие фишки:</h3>
+
         <p>
+
             • <b>Массовое добавление серверов.</b> Закидывайте пачку ссылок или подписку, и ProxyTune аккуратно соберет их в окно выбора.<br>
+
             • <b>Умный ручной пинг.</b> Проверяйте отклик серверов точечно, не вешая процессор телевизора массовыми запросами.<br>
+
             • <b>Экран системных требований.</b> Проверка Root-прав и версии webOS (4.0+) при старте на экране ТВ. Узнать, доступен ли вам рут, можно тут: <a href="https://cani.rootmy.tv/" target="_blank">cani.rootmy.tv</a>.
+
         </p>
 
+
         <div class="faq-box">
+
             <h4>Почему нет автоматической авторизации в закрытых подписках?</h4>
+
             <p>Чтобы не превращать телевизор в «тормозящий кирпич». Современная защита провайдеров от парсеров (Cloudflare, токены) требует эмуляции браузера, что повесит слабую память LG. Поэтому самый надежный и быстрый путь — скопировать готовый чистый JSON (или VLESS-ссылку) прямо из браузера смартфона или утилиты Happwner и вставить его в наш клиент. 100% результат и нулевая нагрузка на ТВ.</p>
+
         </div>
+
         
+
         <p><small style="color: #777;">*Приложение поддерживается на версиях webOS 4.0+. На более старых ТВ использование невозможно из-за отсутствия модуля TUN.</small></p>
+
     </div>
+
 
     <div class="repo-link">
+
         <strong>Установка в один клик через Homebrew Channel:</strong><br><br>
+
         https://sobolevcode.github.io/repo.json
+
     </div>
+
 
     <div class="links">
-        <a href="https://github.com/sobolevcode/sobolevcode.github.io/releases/download/v2.0.2/com.proxytune_2.0.2_all.ipk" class="download-btn">Скачать ProxyTune v2.0.2 (Xray)</a>
+
+        <a href="https://github.com/sobolevcode/sobolevcode.github.io/releases/download/v2.0.1/com.proxytune_2.0.1_all.ipk" class="download-btn">Скачать ProxyTune v2.0.1 (Xray)</a>
+
         
+
         <a href="https://github.com/sobolevcode/sobolevcode.github.io/releases/download/v1.4.0/com.proxytune_1.4.0_all.ipk" class="download-btn-old">Скачать v1.4.0 (Sing-box)</a>
+
     </div>
 
+
     <div class="footer">
+
         <p><strong>Сообщество и поддержка:</strong></p>
+
         <a href="https://t.me/sobolevcode" target="_blank">Telegram-канал SobolevCode</a>
+
         <a href="https://t.me/sobolevcodechat" target="_blank">Чат обсуждений</a>
+
     </div>
+
 
     <script defer src="https://umami-stats-zeta.vercel.app/script.js" data-website-id="3b3f6dc2-ccbc-455a-abfe-bfe069a54767"></script>
 
+
 </body>
-</html>
+
+</html> 
