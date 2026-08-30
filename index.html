@@ -54,20 +54,32 @@
         .download-btn:hover {
             background-color: #34c7a7;
         }
+        /* Стили для превью-картинки */
+        .preview-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+        .preview-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #eaeaea;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
         .footer {
             border-top: 1px solid #eeeeee;
             padding-top: 20px;
             margin-top: 40px;
         }
         .contact-line {
-            color: #666666; /* Серый цвет для обычного текста */
+            color: #666666;
             margin-bottom: 10px;
             margin-top: 0;
         }
         .footer a {
             font-weight: bold;
-            color: #0066cc; /* Синий цвет для самой ссылки */
-            text-decoration: none; /* Убрали подчеркивание */
+            color: #0066cc;
+            text-decoration: none;
         }
         .footer a:hover {
             color: #004499;
@@ -89,6 +101,11 @@
     <div class="info-box">
         <p style="margin: 0;">Требования: webOS 4.0+ и наличие Root-прав (<a href="https://cani.rootmy.tv/" target="_blank" style="color: #0066cc; text-decoration: underline;">cani.rootmy.tv</a>).<br>
         Рекомендуется выключить IPv6 и установить DNS: 1.1.1.1.</p>
+    </div>
+
+    <!-- Блок с картинкой приложения -->
+    <div class="preview-container">
+        <img src="https://raw.githubusercontent.com/sobolevcode/sobolevcode.github.io/refs/heads/main/image/main.png" alt="ProxyTune Preview" class="preview-img">
     </div>
 
     <div class="footer">
