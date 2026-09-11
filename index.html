@@ -92,6 +92,7 @@
             border-radius: 8px;
             border: 1px solid #30363d;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            margin-bottom: 20px;
         }
         .footer {
             border-top: 1px solid #30363d;
@@ -111,8 +112,12 @@
         .footer a:hover {
             text-decoration: underline;
         }
-        .info-box a {
+        .info-box a, .github-link {
             color: #58a6ff;
+            text-decoration: none;
+        }
+        .github-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -131,6 +136,16 @@
     <p><b>Скачать по прямой ссылке</b></p>
     <a href="https://github.com/sobolevcode/ProxyTune/releases/download/v2.2.1/com.proxytune_2.2.1_all.ipk" class="download-btn">Скачать файл (.ipk)</a>
 
+    <div style="text-align: center; margin-bottom: 20px;">
+        <span style="background-color: #1f6feb; color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 0.85rem; font-weight: bold;">
+            ✓ Добавлена поддержка AWG
+        </span>
+    </div>
+
+    <p style="text-align: center; font-size: 0.95rem;">
+        Подробности, инструкции и историю обновлений можно прочитать на <a href="https://github.com/sobolevcode/ProxyTune" target="_blank" class="github-link">GitHub-странице проекта</a>.
+    </p>
+
     <div class="info-box">
         <p style="margin: 0; color: #8b949e;">Требования: webOS 4.0+ и наличие Root-прав (<a href="https://cani.rootmy.tv/" target="_blank">cani.rootmy.tv</a>).<br>
         Рекомендуется выключить IPv6 и установить DNS: 1.1.1.1.</p>
@@ -138,6 +153,7 @@
 
     <div class="preview-container">
         <img src="https://raw.githubusercontent.com/sobolevcode/ProxyTune/refs/heads/main/image/main.png" alt="ProxyTune Preview" class="preview-img">
+        <img src="https://raw.githubusercontent.com/sobolevcode/sobolevcode.github.io/refs/heads/main/image/amnz.jpg" alt="ProxyTune AWG Preview" class="preview-img" style="margin-bottom: 0;">
     </div>
 
     <div class="footer">
