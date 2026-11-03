@@ -51,6 +51,26 @@
             border-bottom: 1px solid #30363d;
             border-radius: 0 8px 8px 0;
         }
+        .github-repo-link {
+            background-color: #161b22;
+            padding: 15px;
+            border-left: 4px solid #238636;
+            font-family: monospace;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            word-break: break-all;
+            border-top: 1px solid #30363d;
+            border-right: 1px solid #30363d;
+            border-bottom: 1px solid #30363d;
+            border-radius: 0 8px 8px 0;
+        }
+        .github-repo-link a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        .github-repo-link a:hover {
+            text-decoration: underline;
+        }
         .mirror-note {
             font-size: 0.85rem;
             color: #8b949e;
@@ -131,6 +151,15 @@
 
     <h1>Установить ProxyTune</h1>
 
+    <!-- Ссылка на репозиторий проекта -->
+    <p><b>Репозиторий проекта на GitHub</b></p>
+    <div class="github-repo-link">
+        <a href="https://github.com/sobolevcode/ProxyTune" target="_blank">https://github.com/sobolevcode/ProxyTune</a>
+    </div>
+    <div class="mirror-note">
+        Исходный код, история обновлений и баг-трекер доступны в репозитории.
+    </div>
+
     <p><b>Установить через репозиторий Homebrew Channel (КРУЖКА)</b></p>
     <div class="repo-link">
         https://sobolevcode.github.io/repo.json
@@ -161,6 +190,7 @@
         <p><strong style="color: #c9d1d9;">Контакты:</strong></p>
         <p class="contact-line">Telegram-канал: <a href="https://t.me/sobolevcode" target="_blank">@sobolevcode</a></p>
         <p class="contact-line">Чат в Telegram: <a href="https://t.me/sobolevcodechat" target="_blank">@sobolevcodechat</a></p>
+        <p class="contact-line" style="margin-top: 15px; font-size: 0.9rem;">Репозиторий проекта: <a href="https://github.com/sobolevcode/ProxyTune" target="_blank">github.com/sobolevcode/ProxyTune</a></p>
     </div>
 
     <script defer src="https://umami-stats-zeta.vercel.app/script.js" data-website-id="3b3f6dc2-ccbc-455a-abfe-bfe069a54767"></script>
