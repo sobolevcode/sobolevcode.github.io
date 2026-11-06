@@ -19,11 +19,11 @@
                 "iconUri": "https://raw.githubusercontent.com/sobolevcode/ProxyTune/refs/heads/main/image/icon.png",
                 "sourceUrl": "https://t.me/sobolevcode",
                 "rootRequired": true,
-                "ipkUrl": "https://github.com/sobolevcode/ProxyTune/releases/download/v2.2.3/com.proxytune_2.2.3_all.ipk",
+                "ipkUrl": "https://github.com/sobolevcode/ProxyTune/releases/download/v2.3.0/com.proxytune_2.3.0_all.ipk",
                 "ipkHash": {
-                    "sha256": "2c0bd52e95427dea9beefd0b8458e7c4c9f3d45a8ed47a38606ccfba1566846f"
+                    "sha256": "a4fafdb0499e2ad442fd62f21bd5eea99ff12d4200474c28c7905e0e09f5d5d3"
                 },
-                "ipkSize": 31902708
+                "ipkSize": 34162908
             },
             "pool": "main",
             "shortDescription": "Менеджер прокси-протоколов для webOS",
