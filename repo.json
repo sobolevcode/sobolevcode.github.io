@@ -12,18 +12,18 @@
             "iconUri": "https://raw.githubusercontent.com/sobolevcode/ProxyTune/refs/heads/main/image/icon.png",
             "manifest": {
                 "id": "com.proxytune",
-                "version": "2.3.0",
+                "version": "2.3.1",
                 "type": "web",
                 "title": "ProxyTune",
                 "appDescription": "Универсальный клиент для webOS. Поддержка подписок, JSON-конфигураций и современных протоколов. Удобное управление со смартфона, поддержка webOS 4+ и новейших моделей ТВ.",
                 "iconUri": "https://raw.githubusercontent.com/sobolevcode/ProxyTune/refs/heads/main/image/icon.png",
                 "sourceUrl": "https://t.me/sobolevcode",
                 "rootRequired": true,
-                "ipkUrl": "https://github.com/sobolevcode/ProxyTune/releases/download/v2.3.0/com.proxytune_2.3.0_all.ipk",
+                "ipkUrl": "https://github.com/sobolevcode/ProxyTune/releases/download/v2.3.1/com.proxytune_2.3.1_all.ipk",
                 "ipkHash": {
-                    "sha256": "a4fafdb0499e2ad442fd62f21bd5eea99ff12d4200474c28c7905e0e09f5d5d3"
+                    "sha256": "46a3ec841fdd5a8163be5093e936e74f3fd7a67ecbf9d87fc92d02f23c5d200d"
                 },
-                "ipkSize": 34162908
+                "ipkSize": 34162882
             },
             "pool": "main",
             "shortDescription": "Менеджер прокси-протоколов для webOS",
