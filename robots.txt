@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sobolevcode.github.io/sitemap.xml
