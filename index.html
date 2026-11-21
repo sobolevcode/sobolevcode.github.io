@@ -3,199 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProxyTune — клиент сетевых конфигураций для LG webOS | SobolevCode</title>
-    <meta name="description" content="Официальный репозиторий и установка ProxyTune для телевизоров LG Smart TV (webOS 4.0+). Поддержка JSON-конфигураций, подписок и управление со смартфона.">
-    
-    <!-- Сюда вставьте мета-тег подтверждения от Google Search Console -->
+    <title>SobolevCode — проекты, утилиты и репозиторий для LG webOS</title>
+    <meta name="description" content="Официальная витрина проектов SobolevCode: приложения и утилиты для LG Smart TV (webOS), репозиторий Homebrew Channel, исходный код на GitHub и контакты.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sobolevcode.github.io/">
+
+    <!-- Вставьте сюда тег подтверждения из Google Search Console -->
+    <!-- <meta name="google-site-verification" content="ВАШ_КОД" /> -->
+
+    <!-- Open Graph для превью в Telegram и соцсетях -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SobolevCode — проекты и репозиторий для LG webOS">
+    <meta property="og:description" content="Открытые проекты, утилиты и репозиторий Homebrew Channel для LG webOS. ProxyTune и другие разработки SobolevCode.">
+    <meta property="og:url" content="https://sobolevcode.github.io/">
+
+    <!-- Структурированные данные под организацию и витрину -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "SobolevCode",
+          "url": "https://sobolevcode.github.io/",
+          "sameAs": [
+            "https://github.com/sobolevcode",
+            "https://t.me/sobolevcode"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "name": "SobolevCode",
+          "url": "https://sobolevcode.github.io/",
+          "description": "Витрина открытых проектов и репозиторий приложений для LG webOS."
+        }
+      ]
+    }
+    </script>
 
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: #0d1117;
             color: #c9d1d9;
-            line-height: 1.6;
-            max-width: 600px;
+            line-height: 1.65;
+            max-width: 680px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 36px 20px;
         }
-        .header-brand {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        .app-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 12px;
-            border: 1px solid #30363d;
+        header {
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 20px;
+            margin-bottom: 28px;
         }
         h1 {
-            font-size: 1.7rem;
-            margin: 0;
+            font-size: 1.85rem;
+            margin: 0 0 8px 0;
             color: #f0f6fc;
         }
-        .subtitle {
-            margin: 4px 0 0 0;
-            font-size: 0.9rem;
+        h2 {
+            font-size: 1.2rem;
+            margin: 32px 0 12px 0;
+            color: #f0f6fc;
+        }
+        h3 {
+            font-size: 1.05rem;
+            margin: 0 0 8px 0;
+            color: #f0f6fc;
+        }
+        p, li {
             color: #8b949e;
-        }
-        p {
-            color: #8b949e;
-        }
-        b {
-            color: #c9d1d9;
-        }
-        .info-box {
-            background-color: #161b22;
-            padding: 15px;
-            border-left: 4px solid #8b949e;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-            font-size: 0.9rem;
-            border-top: 1px solid #30363d;
-            border-right: 1px solid #30363d;
-            border-bottom: 1px solid #30363d;
-        }
-        .repo-link {
-            background-color: #161b22;
-            padding: 15px;
-            border-left: 4px solid #f59e0b;
-            font-family: monospace;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            word-break: break-all;
-            color: #58a6ff;
-            border-top: 1px solid #30363d;
-            border-right: 1px solid #30363d;
-            border-bottom: 1px solid #30363d;
-            border-radius: 0 8px 8px 0;
-        }
-        .github-repo-link {
-            background-color: #161b22;
-            padding: 15px;
-            border-left: 4px solid #238636;
-            font-family: monospace;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            word-break: break-all;
-            border-top: 1px solid #30363d;
-            border-right: 1px solid #30363d;
-            border-bottom: 1px solid #30363d;
-            border-radius: 0 8px 8px 0;
-        }
-        .github-repo-link a, .mirror-note a, .footer a, .info-box a, .github-link {
-            color: #58a6ff;
-            text-decoration: none;
-        }
-        .github-repo-link a:hover, .mirror-note a:hover, .footer a:hover, .info-box a:hover, .github-link:hover {
-            text-decoration: underline;
-        }
-        .mirror-note {
-            font-size: 0.85rem;
-            color: #8b949e;
-            margin-bottom: 30px;
-            margin-top: 5px;
-        }
-        .download-btn {
-            display: inline-block;
-            background-color: #238636;
-            color: #ffffff !important;
-            font-weight: bold;
-            font-size: 1.1rem;
-            padding: 15px 40px;
-            border-radius: 8px;
-            text-align: center;
-            text-decoration: none;
-            width: 100%;
-            box-sizing: border-box;
-            margin-bottom: 20px;
-            transition: background-color 0.2s;
-        }
-        .download-btn:hover {
-            background-color: #2ea043;
-        }
-        .preview-container {
-            margin: 0 0 30px 0;
-            text-align: center;
-        }
-        .preview-img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            border: 1px solid #30363d;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-        }
-        .footer {
-            border-top: 1px solid #30363d;
-            padding-top: 20px;
-            margin-top: 40px;
-        }
-        .contact-line {
-            color: #8b949e;
-            margin-bottom: 10px;
             margin-top: 0;
         }
-        .footer a {
-            font-weight: bold;
+        strong {
+            color: #c9d1d9;
+        }
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        code {
+            display: block;
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 12px 14px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-size: 0.95rem;
+            color: #e6edf3;
+            word-break: break-all;
+            margin: 10px 0;
+        }
+        .project {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin-bottom: 16px;
+        }
+        .project-meta {
+            font-size: 0.85rem;
+            color: #8b949e;
+            margin-bottom: 10px;
+        }
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 12px;
+            font-size: 0.95rem;
+        }
+        .note {
+            font-size: 0.88rem;
+            color: #8b949e;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        footer {
+            border-top: 1px solid #30363d;
+            margin-top: 40px;
+            padding-top: 20px;
+            font-size: 0.95rem;
+        }
+        footer p {
+            margin: 6px 0;
         }
     </style>
 </head>
 <body>
 
-    <div class="header-brand">
-        <img src="https://githubusercontent.com" alt="ProxyTune Icon" class="app-icon">
-        <div>
-            <h1>ProxyTune для LG webOS</h1>
-            <p class="subtitle">Универсальный менеджер сетевых конфигураций и подписок</p>
-        </div>
-    </div>
+    <header>
+        <h1>SobolevCode</h1>
+        <p>Открытые проекты, утилиты и репозиторий приложений для телевизоров LG Smart TV (webOS).</p>
+    </header>
 
-    <div class="preview-container">
-        <img src="https://githubusercontent.com" alt="Интерфейс приложения ProxyTune на телевизоре LG webOS" class="preview-img">
-    </div>
+    <main>
+        <section>
+            <h2>Репозиторий Homebrew Channel (КРУЖКА)</h2>
+            <p>Добавьте этот адрес в Homebrew Channel, чтобы устанавливать и обновлять приложения SobolevCode на LG webOS:</p>
+            <code>https://sobolevcode.github.io/repo.json</code>
+            <p class="note">Зеркало (если основной адрес недоступен): <a href="https://sobolevcode.vercel.app/repo.json" target="_blank" rel="noopener noreferrer">https://sobolevcode.vercel.app/repo.json</a></p>
+        </section>
 
-    <p><b>Репозиторий проекта на GitHub</b></p>
-    <div class="github-repo-link">
-        <a href="https://github.com/sobolevcode/ProxyTune" target="_blank">https://github.com/sobolevcode/ProxyTune</a>
-    </div>
-    <div class="mirror-note">
-        Исходный код, история обновлений и баг-трекер доступны в репозитории.
-    </div>
+        <section>
+            <h2>Проекты</h2>
 
-    <p><b>Установить через репозиторий Homebrew Channel (КРУЖКА)</b></p>
-    <div class="repo-link">
-        https://sobolevcode.github.io/repo.json
-    </div>
-    <div class="mirror-note">
-        Если недоступен основной репо, используйте зеркало: <a href="https://sobolevcode.vercel.app/repo.json" target="_blank">https://sobolevcode.vercel.app/repo.json</a>
-    </div>
+            <article class="project">
+                <h3>ProxyTune</h3>
+                <div class="project-meta">LG webOS 4.0+ · Root · JSON-профили, подписки, AWG</div>
+                <p>Менеджер сетевых конфигураций и подписок для телевизоров LG Smart TV с управлением со смартфона.</p>
+                <p class="note">Требования: webOS 4.0+ и Root (<a href="https://cani.rootmy.tv/" target="_blank" rel="noopener noreferrer">cani.rootmy.tv</a>). Рекомендуется отключить IPv6 и указать DNS 1.1.1.1.</p>
+                <div class="project-links">
+                    <a href="https://github.com/sobolevcode/ProxyTune" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://github.com/sobolevcode/ProxyTune/releases/download/v2.3.1/com.proxytune_2.3.1_all.ipk">Скачать v2.3.1 (.ipk)</a>
+                    <a href="https://github.com/sobolevcode/ProxyTune/releases" target="_blank" rel="noopener noreferrer">Все релизы</a>
+                </div>
+            </article>
 
-    <p><b>Скачать по прямой ссылке</b></p>
-    <a href="https://github.com/sobolevcode/ProxyTune/releases/download/v2.3.1/com.proxytune_2.3.1_all.ipk" class="download-btn">Скачать файл (.ipk)</a>
+            <!--
+            Чтобы добавить новый проект, просто скопируй блок ниже:
 
-    <div style="text-align: center; margin-bottom: 20px;">
-        <span style="background-color: #1f6feb; color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 0.85rem; font-weight: bold;">
-            ✓ Поддержка JSON-профилей, подписок и AWG
-        </span>
-    </div>
+            <article class="project">
+                <h3>Название проекта</h3>
+                <div class="project-meta">Платформа · Ключевые теги</div>
+                <p>Краткое описание в 1–2 предложения.</p>
+                <div class="project-links">
+                    <a href="https://github.com/sobolevcode/REPO" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://github.com/sobolevcode/REPO/releases" target="_blank" rel="noopener noreferrer">Релизы</a>
+                </div>
+            </article>
+            -->
+        </section>
+    </main>
 
-    <p style="text-align: center; font-size: 0.95rem;">
-        Подробности, инструкции и историю обновлений можно прочитать на <a href="https://github.com/sobolevcode/ProxyTune" target="_blank" class="github-link">GitHub-странице проекта</a>.
-    </p>
-
-    <div class="info-box">
-        <p style="margin: 0; color: #8b949e;">Требования: webOS 4.0+ и наличие Root-прав (<a href="https://cani.rootmy.tv/" target="_blank">cani.rootmy.tv</a>).<br>
-        Рекомендуется выключить IPv6 и установить DNS: 1.1.1.1.</p>
-    </div>
-
-    <div class="footer">
-        <p><strong style="color: #c9d1d9;">Контакты и ресурсы:</strong></p>
-        <p class="contact-line">GitHub организации: <a href="https://github.com/sobolevcode" target="_blank">github.com/sobolevcode</a></p>
-        <p class="contact-line">Репозиторий проекта: <a href="https://github.com/sobolevcode/ProxyTune" target="_blank">github.com/sobolevcode/ProxyTune</a></p>
-        <p class="contact-line">Telegram-канал: <a href="https://t.me/sobolevcode" target="_blank">@sobolevcode</a></p>
-        <p class="contact-line">Чат в Telegram: <a href="https://t.me/sobolevcodechat" target="_blank">@sobolevcodechat</a></p>
-    </div>
+    <footer>
+        <p><strong>Контакты и ресурсы</strong></p>
+        <p>GitHub: <a href="https://github.com/sobolevcode" target="_blank" rel="noopener noreferrer">github.com/sobolevcode</a></p>
+        <p>Telegram-канал: <a href="https://t.me/sobolevcode" target="_blank" rel="noopener noreferrer">@sobolevcode</a></p>
+        <p>Чат в Telegram: <a href="https://t.me/sobolevcodechat" target="_blank" rel="noopener noreferrer">@sobolevcodechat</a></p>
+    </footer>
 
     <script defer src="https://umami-stats-zeta.vercel.app/script.js" data-website-id="3b3f6dc2-ccbc-455a-abfe-bfe069a54767"></script>
 
