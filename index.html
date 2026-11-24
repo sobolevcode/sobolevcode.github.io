@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SobolevCode — проекты, утилиты и репозиторий для LG webOS</title>
-    <meta name="description" content="Официальная витрина проектов SobolevCode: приложения и утилиты для LG Smart TV (webOS), репозиторий Homebrew Channel, исходный код на GitHub и контакты.">
+
+    <title>SobolevCode — проекты и инструменты для LG webOS</title>
+    <meta name="description" content="SobolevCode — открытые проекты, утилиты и репозиторий Homebrew Channel для LG webOS. ProxyTune и другие разработки.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://sobolevcode.github.io/">
+    <meta name="theme-color" content="#f3f0e7">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23263d34'/%3E%3Ctext x='50%25' y='53%25' dominant-baseline='middle' text-anchor='middle' fill='%23f3f0e7' font-family='monospace' font-size='34' font-weight='600'%3ES%3C/text%3E%3C/svg%3E">
 
     <!-- Вставьте сюда тег подтверждения из Google Search Console -->
     <!-- <meta name="google-site-verification" content="ВАШ_КОД" /> -->
 
-    <!-- Open Graph для превью в Telegram и соцсетях -->
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="SobolevCode">
     <meta property="og:title" content="SobolevCode — проекты и репозиторий для LG webOS">
     <meta property="og:description" content="Открытые проекты, утилиты и репозиторий Homebrew Channel для LG webOS. ProxyTune и другие разработки SobolevCode.">
     <meta property="og:url" content="https://sobolevcode.github.io/">
 
-    <!-- Структурированные данные под организацию и витрину -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -41,152 +44,682 @@
     }
     </script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <style>
+        :root {
+            --paper: #f3f0e7;
+            --paper-light: #faf8f1;
+            --ink: #202923;
+            --forest: #263d34;
+            --forest-deep: #1d3029;
+            --sage: #a9b8a5;
+            --sage-light: #dce3d6;
+            --clay: #c77b5d;
+            --muted: #737b70;
+            --line: #b9b9aa;
+            --white: #fffdf7;
+            --sans: "DM Sans", Arial, sans-serif;
+            --display: "Oswald", Impact, sans-serif;
+            --mono: "IBM Plex Mono", monospace;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
-            line-height: 1.65;
-            max-width: 680px;
+            min-height: 100vh;
+            margin: 0;
+            padding: 48px 22px 38px;
+            color: var(--ink);
+            background: var(--paper);
+            font-family: var(--sans);
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        a:hover { color: var(--clay); }
+
+        .page {
+            width: min(100%, 965px);
             margin: 0 auto;
-            padding: 36px 20px;
         }
-        header {
-            border-bottom: 1px solid #30363d;
-            padding-bottom: 20px;
-            margin-bottom: 28px;
+
+        .brandbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 13px;
+            animation: appear .6s ease both;
         }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--forest);
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: .02em;
+        }
+
+        .brand-mark {
+            display: grid;
+            width: 25px;
+            height: 25px;
+            place-items: center;
+            border-radius: 50%;
+            color: var(--paper);
+            background: var(--forest);
+            font: 500 12px var(--mono);
+        }
+
+        .brand-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--muted);
+            font: 400 10px var(--mono);
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .brand-status::before {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #789477;
+            content: "";
+        }
+
+        .hero {
+            position: relative;
+            min-height: 178px;
+            display: flex;
+            align-items: center;
+            padding: 27px 30px;
+            overflow: hidden;
+            border: 1px solid var(--ink);
+            background: var(--sage);
+            animation: appear .7s ease both;
+        }
+
+        .hero::before {
+            position: absolute;
+            top: -90px;
+            right: 8%;
+            width: 300px;
+            height: 300px;
+            border: 1px solid rgba(38,61,52,.18);
+            border-radius: 50%;
+            box-shadow: 0 0 0 24px rgba(38,61,52,.035), 0 0 0 50px rgba(38,61,52,.025);
+            content: "";
+        }
+
+        .hero::after {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 42%;
+            height: 100%;
+            background-image: radial-gradient(rgba(38,61,52,.22) .8px, transparent .8px);
+            background-size: 6px 6px;
+            opacity: .32;
+            mask-image: linear-gradient(90deg, transparent, black);
+            content: "";
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 690px;
+        }
+
+        .hero-kicker {
+            margin: 0 0 8px;
+            color: var(--forest);
+            font: 500 10px var(--mono);
+            letter-spacing: .13em;
+            text-transform: uppercase;
+        }
+
         h1 {
-            font-size: 1.85rem;
-            margin: 0 0 8px 0;
-            color: #f0f6fc;
+            margin: 0;
+            color: var(--forest-deep);
+            font: 600 clamp(42px, 8vw, 76px)/.98 var(--display);
+            letter-spacing: -.025em;
+            text-transform: uppercase;
         }
-        h2 {
-            font-size: 1.2rem;
-            margin: 32px 0 12px 0;
-            color: #f0f6fc;
+
+        h1 span { color: var(--clay); }
+
+        .hero-subtitle {
+            margin: 12px 0 0;
+            color: #344b40;
+            font-size: 13px;
+            font-weight: 600;
         }
-        h3 {
-            font-size: 1.05rem;
-            margin: 0 0 8px 0;
-            color: #f0f6fc;
+
+        .hero-index {
+            position: absolute;
+            right: 26px;
+            bottom: 18px;
+            z-index: 1;
+            color: rgba(38,61,52,.72);
+            font: 400 10px var(--mono);
+            letter-spacing: .1em;
         }
-        p, li {
-            color: #8b949e;
-            margin-top: 0;
+
+        .columns {
+            display: grid;
+            grid-template-columns: minmax(0, .92fr) minmax(0, 1.72fr);
+            gap: 13px;
+            margin-top: 32px;
+            align-items: stretch;
         }
-        strong {
-            color: #c9d1d9;
+
+        .card {
+            min-width: 0;
+            border: 1px solid var(--ink);
+            animation: appear .7s ease both;
         }
-        a {
-            color: #58a6ff;
-            text-decoration: none;
+
+        .about-card {
+            display: flex;
+            flex-direction: column;
+            padding: 22px;
+            background: var(--paper-light);
+            animation-delay: .08s;
         }
-        a:hover {
-            text-decoration: underline;
+
+        .project-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 23px;
+            color: var(--white);
+            background: var(--forest-deep);
+            animation-delay: .16s;
         }
-        code {
-            display: block;
-            background-color: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 6px;
-            padding: 12px 14px;
-            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-            font-size: 0.95rem;
-            color: #e6edf3;
-            word-break: break-all;
-            margin: 10px 0;
+
+        .card-label {
+            margin: 0 0 8px;
+            color: var(--clay);
+            font: 500 10px var(--mono);
+            letter-spacing: .09em;
+            text-transform: uppercase;
         }
-        .project {
-            background-color: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 8px;
-            padding: 18px 20px;
-            margin-bottom: 16px;
+
+        .card-title {
+            margin: 0 0 12px;
+            font: 500 clamp(26px, 3.6vw, 36px)/1.05 var(--display);
+            letter-spacing: -.015em;
+            text-transform: uppercase;
         }
+
+        .about-card .card-title { color: var(--ink); }
+
+        .intro {
+            margin: 0 0 16px;
+            color: #626c62;
+            font-size: 12px;
+        }
+
+        .feature-list {
+            display: grid;
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .feature-list li {
+            display: grid;
+            grid-template-columns: 15px 1fr;
+            gap: 7px;
+            align-items: start;
+            color: #4e5b51;
+            font-size: 11.5px;
+            line-height: 1.45;
+        }
+
+        .feature-list li::before {
+            color: #789477;
+            content: "✓";
+            font-weight: 700;
+        }
+
+        .repo-block {
+            margin-top: auto;
+            padding-top: 21px;
+        }
+
+        .repo-caption {
+            margin: 0 0 7px;
+            color: var(--muted);
+            font: 400 9px var(--mono);
+            letter-spacing: .06em;
+            text-transform: uppercase;
+        }
+
+        .repo-address {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px;
+            border: 1px solid #d1d0c4;
+            background: #f3f1e8;
+        }
+
+        .repo-address code {
+            min-width: 0;
+            flex: 1;
+            overflow-wrap: anywhere;
+            color: var(--forest);
+            font: 400 9px var(--mono);
+        }
+
+        .copy-button {
+            flex: 0 0 auto;
+            padding: 6px 8px;
+            border: 1px solid var(--forest);
+            color: var(--forest);
+            background: transparent;
+            font: 500 9px var(--mono);
+            cursor: pointer;
+            transition: background .2s ease, color .2s ease;
+        }
+
+        .copy-button:hover { color: var(--white); background: var(--forest); }
+
+        .mirror {
+            margin: 8px 0 0;
+            color: var(--muted);
+            font-size: 10px;
+            overflow-wrap: anywhere;
+        }
+
+        .mirror a { text-decoration: underline; text-underline-offset: 2px; }
+
+        .contacts-block {
+            margin-top: 16px;
+            padding-top: 14px;
+            border-top: 1px solid #d1d0c4;
+        }
+
+        .contacts-list {
+            display: grid;
+            gap: 6px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .contacts-list a {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 10px;
+            color: #4e5b51;
+            font-size: 11px;
+            transition: color .2s ease;
+        }
+
+        .contacts-list a span:last-child {
+            color: var(--forest);
+            font: 400 10px var(--mono);
+            text-align: right;
+        }
+
+        .contacts-list a:hover,
+        .contacts-list a:hover span:last-child {
+            color: var(--clay);
+        }
+
+        .project-card::after {
+            position: absolute;
+            top: 18px;
+            right: 20px;
+            width: 110px;
+            height: 110px;
+            border: 1px solid rgba(220,227,214,.12);
+            border-radius: 50%;
+            box-shadow: 0 0 0 15px rgba(220,227,214,.025), 0 0 0 30px rgba(220,227,214,.02);
+            content: "";
+            pointer-events: none;
+        }
+
+        .project-head {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 14px;
+        }
+
+        .project-card .card-label { color: #c7a08c; }
+
+        .project-card .card-title {
+            margin-bottom: 5px;
+            color: var(--white);
+            font-size: clamp(32px, 4vw, 43px);
+        }
+
+        .version {
+            padding: 5px 8px;
+            border: 1px solid rgba(220,227,214,.24);
+            color: #d8e0d5;
+            font: 400 9px var(--mono);
+            white-space: nowrap;
+        }
+
         .project-meta {
-            font-size: 0.85rem;
-            color: #8b949e;
-            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            margin: 5px 0 15px;
+            color: #b6c6b8;
+            font: 400 10px var(--mono);
+            line-height: 1.8;
         }
-        .project-links {
+
+        .project-description {
+            position: relative;
+            z-index: 1;
+            max-width: 420px;
+            margin: 0 0 14px;
+            color: #e0e7dc;
+            font-size: 12px;
+        }
+
+        .project-list {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            gap: 7px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .project-list li {
+            display: flex;
+            gap: 8px;
+            color: #c8d3c8;
+            font-size: 11px;
+        }
+
+        .project-list li::before {
+            color: #c7a08c;
+            content: "✓";
+            font-weight: 700;
+        }
+
+        .requirements {
+            position: relative;
+            z-index: 1;
+            margin: 12px 0 0;
+            color: #a8b9aa;
+            font-size: 10px;
+        }
+
+        .requirements a { color: #d9c1b1; text-decoration: underline; text-underline-offset: 2px; }
+
+        .project-actions {
+            position: relative;
+            z-index: 1;
             display: flex;
             flex-wrap: wrap;
-            gap: 14px;
-            margin-top: 12px;
-            font-size: 0.95rem;
+            gap: 8px 15px;
+            margin-top: auto;
+            padding-top: 19px;
         }
-        .note {
-            font-size: 0.88rem;
-            color: #8b949e;
-            margin-top: 10px;
-            margin-bottom: 0;
+
+        .project-actions a {
+            color: var(--white);
+            font-size: 11px;
+            font-weight: 600;
         }
-        footer {
-            border-top: 1px solid #30363d;
-            margin-top: 40px;
-            padding-top: 20px;
-            font-size: 0.95rem;
+
+        .project-actions a:hover { color: #d9b6a3; }
+
+        .project-actions .download-link {
+            display: flex;
+            flex: 1 1 100%;
+            min-height: 39px;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 12px;
+            color: var(--forest-deep);
+            background: var(--sage-light);
+            transition: background .2s ease, transform .2s ease;
         }
-        footer p {
-            margin: 6px 0;
+
+        .project-actions .download-link:hover {
+            color: var(--forest-deep);
+            background: #edf0e7;
+            transform: translateY(-1px);
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 22px;
+            padding-top: 13px;
+            border-top: 1px solid #c9c8bb;
+            color: var(--muted);
+            font-size: 10px;
+            animation: appear .7s .24s ease both;
+        }
+
+        .contact-links { display: flex; flex-wrap: wrap; gap: 14px; }
+        .contact-links a { color: #59675c; }
+        .contact-links a:hover { color: var(--clay); }
+
+        .toast {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            z-index: 5;
+            padding: 10px 14px;
+            border: 1px solid var(--forest);
+            color: var(--white);
+            background: var(--forest);
+            font: 400 11px var(--mono);
+            opacity: 0;
+            transform: translateY(8px);
+            pointer-events: none;
+            transition: .2s ease;
+        }
+
+        .toast.show { opacity: 1; transform: translateY(0); }
+
+        @keyframes appear {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 700px) {
+            body { padding: 28px 15px; }
+            .columns { grid-template-columns: 1fr; margin-top: 18px; }
+            .about-card { min-height: 0; }
+            .repo-block { margin-top: 18px; }
+            .project-card { min-height: 350px; }
+            .hero { min-height: 155px; padding: 24px 21px; }
+            .hero-index { right: 16px; bottom: 12px; }
+        }
+
+        @media (max-width: 420px) {
+            body { padding: 22px 12px; }
+            .brand-status { font-size: 8px; }
+            .hero { min-height: 145px; }
+            h1 { font-size: clamp(39px, 12vw, 54px); }
+            .about-card, .project-card { padding: 18px; }
+            .project-card::after { right: 10px; width: 80px; height: 80px; }
+            .contact-row { flex-direction: column; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
         }
     </style>
 </head>
+
 <body>
+    <main class="page">
+        <div class="brandbar">
+            <a class="brand" href="https://sobolevcode.github.io/" aria-label="SobolevCode — главная">
+                <span class="brand-mark">S</span>
+                <span>SobolevCode</span>
+            </a>
+            <div class="brand-status">Independent developer</div>
+        </div>
 
-    <header>
-        <h1>SobolevCode</h1>
-        <p>Открытые проекты, утилиты и репозиторий приложений для телевизоров LG Smart TV (webOS).</p>
-    </header>
+        <header class="hero">
+            <div class="hero-content">
+                <p class="hero-kicker">Open source · Software · webOS</p>
+                <h1>Создаю <span>полезное.</span></h1>
+                <p class="hero-subtitle">Проекты, инструменты и решения для повседневных задач.</p>
+            </div>
+            <div class="hero-index">SC / 001 — 2026</div>
+        </header>
 
-    <main>
-        <section>
-            <h2>Репозиторий Homebrew Channel (КРУЖКА)</h2>
-            <p>Добавьте этот адрес в Homebrew Channel, чтобы устанавливать и обновлять приложения SobolevCode на LG webOS:</p>
-            <code>https://sobolevcode.github.io/repo.json</code>
-            <p class="note">Зеркало (если основной адрес недоступен): <a href="https://sobolevcode.vercel.app/repo.json" target="_blank" rel="noopener noreferrer">https://sobolevcode.vercel.app/repo.json</a></p>
-        </section>
+        <div class="columns">
+            <section class="card about-card" aria-labelledby="about-title">
+                <p class="card-label">01 / About & repository</p>
+                <h2 class="card-title" id="about-title">Открытая<br>разработка</h2>
+                <p class="intro">SobolevCode — пространство моих проектов и инструментов. Основное направление — приложения и решения для LG Smart TV на webOS.</p>
 
-        <section>
-            <h2>Проекты</h2>
+                <ul class="feature-list">
+                    <li>Открытые исходники и проекты</li>
+                    <li>Утилиты для LG webOS</li>
+                    <li>Репозиторий приложений Homebrew</li>
+                    <li>Обновления и новые релизы на GitHub</li>
+                </ul>
 
-            <article class="project">
-                <h3>ProxyTune</h3>
-                <div class="project-meta">LG webOS 4.0+ · Root · JSON-профили, подписки, AWG</div>
-                <p>Менеджер сетевых конфигураций и подписок для телевизоров LG Smart TV с управлением со смартфона.</p>
-                <p class="note">Требования: webOS 4.0+ и Root (<a href="https://cani.rootmy.tv/" target="_blank" rel="noopener noreferrer">cani.rootmy.tv</a>). Рекомендуется отключить IPv6 и указать DNS 1.1.1.1.</p>
-                <div class="project-links">
-                    <a href="https://github.com/sobolevcode/ProxyTune" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://github.com/sobolevcode/ProxyTune/releases/download/v2.4.0/com.proxytune_2.4.0_all.ipk">Скачать v2.4.0 (.ipk)</a>
-                    <a href="https://github.com/sobolevcode/ProxyTune/releases" target="_blank" rel="noopener noreferrer">Все релизы</a>
+                <div class="repo-block">
+                    <p class="repo-caption">Homebrew Channel · Repository URL</p>
+                    <div class="repo-address">
+                        <code id="repo-url">https://sobolevcode.github.io/repo.json</code>
+                        <button class="copy-button" id="copy-repo" type="button">COPY</button>
+                    </div>
+                    <p class="mirror">Зеркало: <a href="https://sobolevcode.vercel.app/repo.json" target="_blank" rel="noopener noreferrer">https://sobolevcode.vercel.app/repo.json</a></p>
                 </div>
-            </article>
 
-            <!--
-            Чтобы добавить новый проект, просто скопируй блок ниже:
-
-            <article class="project">
-                <h3>Название проекта</h3>
-                <div class="project-meta">Платформа · Ключевые теги</div>
-                <p>Краткое описание в 1–2 предложения.</p>
-                <div class="project-links">
-                    <a href="https://github.com/sobolevcode/REPO" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://github.com/sobolevcode/REPO/releases" target="_blank" rel="noopener noreferrer">Релизы</a>
+                <div class="contacts-block">
+                    <p class="repo-caption">Контакты и ресурсы</p>
+                    <ul class="contacts-list">
+                        <li>
+                            <a href="https://github.com/sobolevcode" target="_blank" rel="noopener noreferrer">
+                                <span>GitHub</span>
+                                <span>github.com/sobolevcode ↗</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://t.me/sobolevcode" target="_blank" rel="noopener noreferrer">
+                                <span>Telegram-канал</span>
+                                <span>@sobolevcode ↗</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://t.me/sobolevcodechat" target="_blank" rel="noopener noreferrer">
+                                <span>Чат в Telegram</span>
+                                <span>@sobolevcodechat ↗</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-            </article>
-            -->
-        </section>
+            </section>
+
+            <section class="card project-card" id="projects" aria-labelledby="project-title">
+                <div class="project-head">
+                    <div>
+                        <p class="card-label">02 / Featured project</p>
+                        <h2 class="card-title" id="project-title">ProxyTune</h2>
+                    </div>
+                    <span class="version">v2.4.0</span>
+                </div>
+
+                <p class="project-meta">LG webOS 4.0+ &nbsp;·&nbsp; ROOT &nbsp;·&nbsp; JSON &nbsp;·&nbsp; AWG</p>
+                <p class="project-description">Менеджер сетевых конфигураций и подписок для телевизоров LG Smart TV с удобным управлением со смартфона.</p>
+
+                <ul class="project-list">
+                    <li>Управление сетевыми профилями</li>
+                    <li>Поддержка JSON-профилей и подписок</li>
+                    <li>Поддержка (AWG)</li>
+                    <li>Управление с мобильного устройства</li>
+                </ul>
+
+                <p class="requirements">Требования: webOS 4.0+ и Root (<a href="https://cani.rootmy.tv/" target="_blank" rel="noopener noreferrer">проверить совместимость</a>). Рекомендуется отключить IPv6 и указать DNS 1.1.1.1.</p>
+
+                <div class="project-actions">
+                    <a href="https://github.com/sobolevcode/ProxyTune" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                    <a href="https://github.com/sobolevcode/ProxyTune/releases" target="_blank" rel="noopener noreferrer">Все релизы ↗</a>
+                    <a class="download-link" href="https://github.com/sobolevcode/ProxyTune/releases/download/v2.4.0/com.proxytune_2.4.0_all.ipk" target="_blank" rel="noopener noreferrer">
+                        <span>Скачать ProxyTune v2.4.0 (.ipk)</span>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <footer class="contact-row">
+            <div>© <span id="year">2026</span> SobolevCode</div>
+            <nav class="contact-links" aria-label="Контакты и ресурсы">
+                <a href="https://github.com/sobolevcode" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                <a href="https://t.me/sobolevcode" target="_blank" rel="noopener noreferrer">Telegram ↗</a>
+                <a href="https://t.me/sobolevcodechat" target="_blank" rel="noopener noreferrer">Чат ↗</a>
+            </nav>
+        </footer>
     </main>
 
-    <footer>
-        <p><strong>Контакты и ресурсы</strong></p>
-        <p>GitHub: <a href="https://github.com/sobolevcode" target="_blank" rel="noopener noreferrer">github.com/sobolevcode</a></p>
-        <p>Telegram-канал: <a href="https://t.me/sobolevcode" target="_blank" rel="noopener noreferrer">@sobolevcode</a></p>
-        <p>Чат в Telegram: <a href="https://t.me/sobolevcodechat" target="_blank" rel="noopener noreferrer">@sobolevcodechat</a></p>
-    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite">Адрес скопирован</div>
 
-    <script defer src="https://umami-stats-zeta.vercel.app/script.js" data-website-id="3b3f6dc2-ccbc-455a-abfe-bfe069a54767"></script>
+    <script>
+        const copyButton = document.getElementById("copy-repo");
+        const repoUrl = document.getElementById("repo-url");
+        const toast = document.getElementById("toast");
+        let toastTimer;
 
+        copyButton.addEventListener("click", async () => {
+            const value = repoUrl.textContent.trim();
+
+            try {
+                await navigator.clipboard.writeText(value);
+            } catch (error) {
+                const temporaryInput = document.createElement("textarea");
+                temporaryInput.value = value;
+                temporaryInput.setAttribute("readonly", "");
+                temporaryInput.style.position = "absolute";
+                temporaryInput.style.left = "-9999px";
+                document.body.appendChild(temporaryInput);
+                temporaryInput.select();
+                document.execCommand("copy");
+                temporaryInput.remove();
+            }
+
+            copyButton.textContent = "COPIED ✓";
+            toast.classList.add("show");
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.remove("show");
+                copyButton.textContent = "COPY";
+            }, 1800);
+        });
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
