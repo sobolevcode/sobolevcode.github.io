@@ -44,9 +44,9 @@
                 "rootRequired": true,
                 "ipkUrl": "https://github.com/sobolevcode/ProxyTune-OG/releases/download/v1.0.0/com.proxytune.og_1.0.0_all.ipk",
                 "ipkHash": {
-                    "sha256": "f1075b7d8e94b9fd18bb71b80c8393f174722027517d0d9a6a123b8b74f65948"
+                    "sha256": "1c7f9a4a38cb58c4e35dfaf6538af6aa25c6f34977ab183ea8b0778b0c3ddf0d"
                 },
-                "ipkSize": 18576072
+                "ipkSize": 18580788
             },
             "pool": "main",
             "shortDescription": "Облегчённый VPN-клиент для webOS 3.5–3.9",
