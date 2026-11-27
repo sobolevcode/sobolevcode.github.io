@@ -23,7 +23,7 @@
                 "ipkHash": {
                     "sha256": "b64a71479cb6b70343701ec16093d7f4475a757a7c37c7de6a8b747f33ab5391"
                 },
-                "ipkSize": 34165544
+                "ipkSize": 34165522
             },
             "pool": "main",
             "shortDescription": "Менеджер прокси-протоколов для webOS",
