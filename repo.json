@@ -1,9 +1,9 @@
 {
     "paging": {
         "page": 1,
-        "count": 1,
+        "count": 2,
         "maxPage": 1,
-        "itemsTotal": 1
+        "itemsTotal": 2
     },
     "packages": [
         {
@@ -27,6 +27,29 @@
             },
             "pool": "main",
             "shortDescription": "Менеджер прокси-протоколов для webOS",
+            "fullDescriptionUrl": "https://raw.githubusercontent.com/sobolevcode/sobolevcode.github.io/refs/heads/main/description_proxytune.html"
+        },
+        {
+            "id": "com.proxytune.og",
+            "title": "ProxyTune OG",
+            "iconUri": "https://raw.githubusercontent.com/sobolevcode/sobolevcode.github.io/refs/heads/main/image/ProxyTuneOG/icon.png",
+            "manifest": {
+                "id": "com.proxytune.og",
+                "version": "1.0.0",
+                "type": "web",
+                "title": "ProxyTune OG",
+                "appDescription": "Облегчённая сборка для старых телевизоров LG на базе webOS 3.5–3.9 (32-bit ARM). Поддержка AmneziaWG, VLESS, Trojan, Shadowsocks, SOCKS5, подписок и JSON-конфигураций. Управление со смартфона по порту 8889.",
+                "iconUri": "https://raw.githubusercontent.com/sobolevcode/sobolevcode.github.io/refs/heads/main/image/icon.png",
+                "sourceUrl": "https://t.me/sobolevcode",
+                "rootRequired": true,
+                "ipkUrl": "https://github.com/sobolevcode/ProxyTune-OG/releases/download/v1.0.0/com.proxytune.og_1.0.0_all.ipk",
+                "ipkHash": {
+                    "sha256": "f1075b7d8e94b9fd18bb71b80c8393f174722027517d0d9a6a123b8b74f65948"
+                },
+                "ipkSize": 18576072
+            },
+            "pool": "main",
+            "shortDescription": "Облегчённый VPN-клиент для webOS 3.5–3.9",
             "fullDescriptionUrl": "https://raw.githubusercontent.com/sobolevcode/sobolevcode.github.io/refs/heads/main/description_proxytune.html"
         }
     ]
